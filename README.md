@@ -2,9 +2,7 @@
 Sample Login Form &amp; Sample Repo
 
 Link:
-[Login Form #3(]https://codepen.io/adczer/pen/YzwYdoY)
-
-<link>https://codepen.io/adczer/pen/YzwYdoY</link>
+[Login Form #3](]https://codepen.io/adczer/pen/YzwYdoY)
 
 [Github](https://github.com/)
 
