@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form #3</title>
+    <link rel="stylesheet" a href="style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="bord">
+            <div class="form">
+                <div class="header"><div class="icolog">
+                    <span style="font-size: 48px;"><i class="fas fa-user-tag"></i></span></div>
+                <p>Create your account</p>
+                </div>
+                <form method="POST" >
+                   
+                    <div class="form_input">
+                        <i class="far fa-user"></i> 
+                        <input type="text" name="name" id="name" placeholder="First Name"/>
+                        <input type="text" name="fname" id="fname" placeholder="Last Name"/>
+                    </div>
+
+                    <div class="form_input">
+                        <i class="far fa-envelope"></i> 
+                        <input type="email" name="email" id="email" placeholder="email@address.com"/>
+                        <small class="err_email"></small>
+                    </div>
+
+                    <div class="form_input">
+                        <i class="fas fa-lock"></i> 
+                        <input type="password" name="psd" id="psd" placeholder="Password"/>
+                        <small class="err_psd"></small>
+                    </div>
+
+                    <div class="form_input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="psd2" id="psd2" placeholder="Reenter Password"/>
+                        <small class="err_rpsd"></small>
+                    </div>
+
+                    <div class="msg">
+                        
+                    </div>
+
+                    <input type="button" id="sub" value="CREATE ACCOUNT"/>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+<script>
+$(document).ready(function() {
+    $("#sub").click(function() {
+
+        function check_email()
+        {
+            var email = $("#email").val();
+            if (email !== '')
+            {
+                $(".err_email").hide();
+                flag_email = true;
+            }
+            else
+            {
+                $(".err_email").html("Something is wrong!");
+                $(".err_email").fadeIn(500);
+
+            }
+        }
+
+        function check_pass()
+        {
+            var pass = $("#psd").val();
+            if(pass !== '')
+            {
+                $(".err_psd").hide();
+                flag_psd = true;
+            }
+            else
+            {
+                $(".err_psd").html("Something is wrong!");
+                $(".err_psd").fadeIn(500);
+            }
+        }
+
+
+        function check_repeat()
+        {
+            var pass = $("#psd").val();
+            var pass2 = $("#psd2").val();
+
+            if(pass2 !=='' && pass == pass2)
+            {
+                $(".err_rpsd").hide();
+                flag_rpsd = true;
+            }
+            else
+            {
+                $(".err_rpsd").html("Something is wrong!");
+                $(".err_rpsd").fadeIn(500);
+            }
+        }
+    
+        flag_email=false;
+        flag_psd = false;
+        flag_rpsd = false;
+
+
+        check_email();
+        check_pass();
+        check_repeat();
+
+        if(flag_email == true && flag_psd==true && flag_rpsd==true)
+        {
+            $(".msg").html("Your account has been created successfully!");
+                $(".msg").fadeIn(500);
+        }
+        else
+        {
+            $(".msg").hide();
+        }
+    });
+});
+
+</script>
+</body>
+</html>
