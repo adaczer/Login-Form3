@@ -2,8 +2,6 @@
 Sample Login Form &amp; Sample Repo
 
 Link:
+
 [Login Form #3](https://codepen.io/adczer/pen/YzwYdoY)
 
-[Github](https://github.com/)
-
-[Lets go to Quora](https://www.quora.com)
